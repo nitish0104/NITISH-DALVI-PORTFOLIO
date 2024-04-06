@@ -6,6 +6,7 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Navbar from '../components/Navbar';
 import Skills from '../components/Skills';
+import MyProjects from '../components/Myprojects';
 
 const Home = () => {
   return (
@@ -14,7 +15,8 @@ const Home = () => {
 	  <Navbar></Navbar>
       <About />
       <Aboutlarge></Aboutlarge>
-      <Projects />
+      {/* <Projects /> */}
+      <MyProjects></MyProjects>
       <Skills/>
       <Contact />
     </div>

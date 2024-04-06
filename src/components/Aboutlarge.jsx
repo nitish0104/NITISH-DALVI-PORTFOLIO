@@ -1,34 +1,53 @@
+import React, { useState } from 'react';
 import profileImage from '../images/my-circle image.jpg';
 import { FaWhatsapp, FaInstagram, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 
-
 const HeroSectionLarge = () => {
+  const [hoveredIcon, setHoveredIcon] = useState(null);
+
+  const handleIconHover = (iconName) => {
+    setHoveredIcon(iconName);
+  };
+
+  const handleIconLeave = () => {
+    setHoveredIcon(null);
+  };
+
+  const iconStyles = (iconName) => ({
+    fontSize: hoveredIcon === iconName ? '40px' : '32px',
+    color: hoveredIcon === iconName ? 'gray' : iconName === 'whatsapp' ? '#25D366' : iconName === 'instagram' ? '#E1306C' : iconName === 'twitter' ? '#1DA1F2' : iconName === 'linkedin' ? '#0A66C2' : iconName === 'github' ? '#181717' : 'initial',
+  });
 
   return (
     <>
-      <section className="bg-white text-gray-900 py-20 hidden lg:block " style={{ height: 'calc(100vh - 4rem)' }}>
+      <section className="bg-white text-gray-900 py-32 hidden lg:block  " style={{ height: 'calc(100vh - 4rem)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center justify-between">
           <div className="md:w-1/2">
             <h1 className="text-4xl md:text-6xl font-bold">Hi, I'm a DevOps Engineer</h1>
 
             <p className="mt-4 text-lg md:text-xl">I'm a DevOps Engineer passionate about automation and continuous integration and continuous delivery.</p>
-            <button className="mt-8 bg-blue-900 text-white px-6 py-3 rounded-full shadow-md hover:bg-gray-300 transition duration-300">Contact Me</button>
+            <button className="mt-8 bg-blue-900 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-700 hover:text-gray-200 transition duration-300">Contact Me</button>
               {/* Social Media Icons */}
             <div className="mt-8 flex items-center">
-              <a href="https://wa.me/your-whatsapp-number" target="_blank" rel="noopener noreferrer" className="mr-4">
-                <FaWhatsapp size={32} color="#25D366" />
+              <a href="https://wa.me/9987274285" target="_blank" rel="noopener noreferrer" className="mr-4"
+                onMouseEnter={() => handleIconHover('whatsapp')} onMouseLeave={handleIconLeave}>
+                <FaWhatsapp size={32} style={iconStyles('whatsapp')} />
               </a>
-              <a href="https://www.instagram.com/your-instagram-profile" target="_blank" rel="noopener noreferrer" className="mr-4">
-                <FaInstagram size={32} color="#E1306C" />
+              <a href="https://www.instagram.com/your-instagram-profile" target="_blank" rel="noopener noreferrer" className="mr-4"
+                onMouseEnter={() => handleIconHover('instagram')} onMouseLeave={handleIconLeave}>
+                <FaInstagram size={32} style={iconStyles('instagram')} />
               </a>
-              <a href="https://twitter.com/your-twitter-profile" target="_blank" rel="noopener noreferrer" className="mr-4">
-                <FaTwitter size={32} color="#1DA1F2" />
+              <a href="https://twitter.com/your-twitter-profile" target="_blank" rel="noopener noreferrer" className="mr-4"
+                onMouseEnter={() => handleIconHover('twitter')} onMouseLeave={handleIconLeave}>
+                <FaTwitter size={32} style={iconStyles('twitter')} />
               </a>
-              <a href="https://www.linkedin.com/in/nitishdalvi/" target="_blank" rel="noopener noreferrer" className="mr-4">
-                <FaLinkedin size={32} color="#0A66C2" />
+              <a href="https://www.linkedin.com/in/nitishdalvi/" target="_blank" rel="noopener noreferrer" className="mr-4"
+                onMouseEnter={() => handleIconHover('linkedin')} onMouseLeave={handleIconLeave}>
+                <FaLinkedin size={32} style={iconStyles('linkedin')} />
               </a>
-              <a href="http://github.com/nitish0104" target="_blank" rel="noopener noreferrer">
-                <FaGithub size={32} color="#181717" />
+              <a href="http://github.com/nitish0104" target="_blank" rel="noopener noreferrer"
+                onMouseEnter={() => handleIconHover('github')} onMouseLeave={handleIconLeave}>
+                <FaGithub size={32} style={iconStyles('github')} />
               </a>
             </div>
           </div>
@@ -42,6 +61,8 @@ const HeroSectionLarge = () => {
 };
 
 export default HeroSectionLarge;
+
+
 
 
 // import React, { useState, useEffect } from 'react';

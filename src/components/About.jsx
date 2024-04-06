@@ -55,7 +55,7 @@ const SmallDeviceSection = () => {
       <div className="relative flex flex-col justify-center items-center h-full">
         <div className="max-w-4xl px-4 text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4"> Hi, I'm a{statements[statementIndex]}</h1>
-          <p className="text-lg sm:text-xl md:text-2xl mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p className="text-lg sm:text-xl md:text-2xl mb-8">I'm a DevOps Engineer passionate about automation and continuous integration and continuous delivery.</p>
         </div>
       </div>
     </section>
