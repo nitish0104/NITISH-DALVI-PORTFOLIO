@@ -1,16 +1,19 @@
-// Contact.js
+
+
 import React from 'react';
 
 const Contact = () => {
   return (
-    <section className="bg-gray-200 py-8">
-      <div className="container mx-auto">
-        <h2 className="text-2xl font-semibold mb-4">Contact Me</h2>
-        {/* Add your contact form or links */}
+    <section className="py-8 h-screen">
+      <div className=" mx- h-[100%]">
+        {/* Display project cards */}
         {/* Example: */}
-        <p className="text-gray-700">
+        <div className="bg-white p-4 shadow-md rounded-md h-[100%] flex items-center justify-center text-2xl font-bold">
+          <h3 className="text-lg font-semibold">Contacts</h3>
+          <p className="text-gray-700">
           Email: <a href="mailto:you@example.com">you@example.com</a>
         </p>
+        </div>
       </div>
     </section>
   );

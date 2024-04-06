@@ -1,0 +1,16 @@
+/* CSS for backspace and typing animation */
+@keyframes backspace {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  /* Apply animation to h1 element */
+  h1 {
+    animation: backspace 0.5s forwards, typing 1.5s 0.5s forwards;
+  }
+  

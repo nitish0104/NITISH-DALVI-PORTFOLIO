@@ -10,6 +10,9 @@ function App() {
           <Route path="/" element={<Home />} />
         </Routes>
       </Router>
+      <script>
+  AOS.init();
+</script>
     </>
   );
 }
