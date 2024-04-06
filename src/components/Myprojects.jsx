@@ -70,12 +70,19 @@ const ProjectSlider = () => {
   };
 
   return (
+    <div className='bg-[#faffd6]'>
+
     <div className="container mx-auto px-4 py-8">
+      <h1 className="text-2xl md:text-4xl font-bold text-center mb-8 relative">
+        <span className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black h-0.5 w-6"></span>
+       My Project's
+        <span className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black h-0.5 w-6"></span>
+      </h1>
       <div className={`grid ${isLaptop ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8' : ''} relative`}>
         {projects.map((project, index) => (
           <div
             key={project.id}
-            className={`rounded-lg overflow-hidden shadow-md transition duration-300 transform ${isLaptop && index !== hoveredProjectIndex ? 'hover:scale-105' : ''} ${isLaptop && hoveredProjectIndex !== null && index !== hoveredProjectIndex ? 'filter blur-sm' : ''}`}
+            className={`rounded-lg overflow-hidden shadow-md transition duration-300 transform ${isLaptop && index !== hoveredProjectIndex ? 'hover:scale-105' : 'mb-4'} ${isLaptop && hoveredProjectIndex !== null && index !== hoveredProjectIndex ? 'filter blur-sm' : ''}`}
             onMouseEnter={() => handleHover(index)}
             onMouseLeave={handleLeave}
             style={{ transform: hoveredProjectIndex === index ? 'scale(1.05)' : 'scale(1)' }} // Adjusted here
@@ -85,7 +92,7 @@ const ProjectSlider = () => {
               alt={project.title}
               className={`object-cover w-full h-64`}
             />
-            <div className="p-4">
+            <div className="p-4  bg-gray-100">
               <h2 className="text-xl font-bold mb-2">{project.title}</h2>
               <p className="text-gray-700 mb-4 line-clamp-3">
                 {project.description}
@@ -99,22 +106,8 @@ const ProjectSlider = () => {
           </div>
         ))}
       </div>
-      {!isLaptop && (
-        <div className="absolute bottom-0 left-0 w-full flex justify-between mt-4 px-4">
-          <button
-            onClick={handlePrevClick}
-            className="px-2 py-1 bg-blue-500 text-white rounded-md"
-          >
-            Prev
-          </button>
-          <button
-            onClick={handleNextClick}
-            className="px-2 py-1 bg-blue-500 text-white rounded-md"
-          >
-            Next
-          </button>
         </div>
-      )}
+      
     </div>
   );
 };

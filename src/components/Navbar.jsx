@@ -55,7 +55,7 @@ const Navbar = () => {
       >
         {(ref) => (
           <div className={`${isOpen ? 'fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center' : 'hidden'} md:hidden`} id="mobile-menu">
-            <div ref={ref} className="bg-blue-900 rounded-md p-4 w-full max-w-md">
+            <div ref={ref} className="bg-[#5585b5] rounded-md p-4 w-full max-w-md">
               {/* Mobile Navigation links */}
               <Link to="#" className="text-gray-300 hover:text-white block px-4 py-2 rounded-md text-base font-medium mb-2  border-b-2   border-transparent hover:border-white">Home</Link>
               <Link to="#" className="text-gray-300 hover:text-white block px-4 py-2 rounded-md text-base font-medium mb-2 border-b-2   border-transparent hover:border-white">About</Link>
