@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Transition } from '@headlessui/react';
+import { FaGithub } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,39 +14,46 @@ const Navbar = () => {
 
   return (
     <nav className="bg-blue-900 text-white shadow-2xl">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo on the left */}
-          <div className="container mx-auto">
-            <h1 className="text-xl font-semibold">Nitish Dalvi</h1>
-            <p className="text-sm">DevOps Engineer</p>
-          </div>
-          <div className="hidden md:block">
-            <div className="ml-4 flex items-center md:ml-6">
-              {/* Navigation links */}
-              <button onClick={() => smoothScrollTo('about')} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">About</button>
-              <button onClick={() => smoothScrollTo('projects')} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">Projects</button>
-              <button onClick={() => smoothScrollTo('skills')} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">Skills</button>
-              <button onClick={() => smoothScrollTo('contact')} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">Contact</button>
-            </div>
-          </div>
-          <div className="-mr-2 flex md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-blue-800 focus:outline-none focus:bg-blue-800 focus:text-white"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <span className="sr-only">Open main menu</span>
-              {/* Icon for mobile menu */}
-              <svg className={`${isOpen ? 'hidden' : 'block'} h-6 w-6`} stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-            </button>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        {/* Name on the left */}
+        <div id='name'>
+          <h1 className="text-xl font-semibold">Nitish Dalvi</h1>
+          <p className="text-sm">DevOps Engineer</p>
+        </div>
+        {/* Navigation links in the center */}
+        <div id='nav' className="hidden md:block">
+          <div className=" flex items-center pr-9">
+            {/* Navigation links */}
+            <button onClick={() => smoothScrollTo('about')} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">About</button>
+            <button onClick={() => smoothScrollTo('projects')} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">Projects</button>
+            <button onClick={() => smoothScrollTo('skills')} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">Skills</button>
+            <button onClick={() => smoothScrollTo('contact')} className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">Contact</button>
           </div>
         </div>
+        {/* GitHub link on the right */}
+        <div id='github' className="hidden md:block">
+          <a href="http://github.com/nitish0104" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
+            <FaGithub size={32} />
+          </a>
+        </div>
+        {/* Mobile menu button */}
+        <div className="-mr-2 flex md:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            type="button"
+            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-blue-800 focus:outline-none focus:bg-blue-800 focus:text-white"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <span className="sr-only">Open main menu</span>
+            {/* Icon for mobile menu */}
+            <svg className={`${isOpen ? 'hidden' : 'block'} h-6 w-6`} stroke="currentColor" fill="none" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
       </div>
+      {/* Mobile menu */}
       <Transition
         show={isOpen}
         enter="transition ease-out duration-100 transform"
@@ -59,7 +67,7 @@ const Navbar = () => {
           <div className={`${isOpen ? 'fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center' : 'hidden'} md:hidden`} id="mobile-menu">
             <div ref={ref} className="bg-blue-900 rounded-md p-4 w-full max-w-md">
               {/* Mobile Navigation links */}
-              <button onClick={() => { smoothScrollTo('about'); setIsOpen(false); }} className="text-gray-300 hover:text-white block px-4 py-2 rounded-md text-base font-medium mb-2 border-b-2   border-transparent hover:border-white">About</button>
+              <button onClick={() => { smoothScrollTo('about'); setIsOpen(false); }} className="text-gray-300 hover:text-white block px-4 py-2 rounded-md text-base font-medium mb-2 border-b-2 border-transparent hover:border-white">About</button>
               <button onClick={() => { smoothScrollTo('projects'); setIsOpen(false); }} className="text-gray-300 hover:text-white block px-4 py-2 rounded-md text-base font-medium mb-2 border-b-2  border-transparent  hover:border-white">Projects</button>
               <button onClick={() => { smoothScrollTo('skills'); setIsOpen(false); }} className="text-gray-300 hover:text-white block px-4 py-2 rounded-md text-base font-medium mb-2 border-b-2  border-transparent  hover:border-white">Skills</button>
               <button onClick={() => { smoothScrollTo('contact'); setIsOpen(false); }} className="text-gray-300 hover:text-white block px-4 py-2 rounded-md text-base font-medium mb-2 border-b-2  border-transparent  hover:border-white">Contact</button>
