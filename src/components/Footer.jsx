@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaWhatsapp, FaGithub } 
 
 const Footer = () => {
   return (
-    <footer className="bg-[#DCCFED] text-black py-4 fixed md:relative bottom-0 w-full">
+    <footer className="bg-[#291C3A] text-white py-4 fixed md:relative bottom-0 w-full">
       <div className="container mx-auto flex justify-center space-x-6">
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
           <FaFacebook className="text-2xl" />
