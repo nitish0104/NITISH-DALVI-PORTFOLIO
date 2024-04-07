@@ -32,7 +32,7 @@ const ContactComponent = () => {
       </h1>
         </div>
 
-        <div class="pb-6 grid grid-cols-1 gap-6 mt-24 lg:grid-cols-2 h-0 ">
+        <div class="pb-6 grid grid-cols-1 gap-6 my-24 lg:grid-cols-2  ">
             <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div>
                     <span class="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 ">
@@ -123,7 +123,7 @@ const ContactComponent = () => {
                 required
               ></textarea>
             </div>
-            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">
+            <button type="submit" className="bg-blue-500 w-full  text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">
               Submit
             </button>
           </form>
