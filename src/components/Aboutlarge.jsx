@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import profileImage from '../images/my-circle image.jpg';
+import devsecops from '../images/Devsecops-white.jpg';
+
 import { FaWhatsapp, FaInstagram, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const HeroSectionLarge = () => {
@@ -20,15 +22,23 @@ const HeroSectionLarge = () => {
 
   return (
     <>
-      <section className="bg-white text-gray-900 py-32 hidden lg:block  " style={{ height: 'calc(100vh - 4rem)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center justify-between">
-          <div className="md:w-1/2">
-            <h1 className="text-4xl md:text-6xl font-bold">Hi, I'm a DevOps Engineer</h1>
+      <section className="relative bg-white text-gray-900 py-32 hidden lg:block  " style={{ height: 'calc(100vh - 4rem)' }}>
+      
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center justify-between">
+        
+          <div className="relative md:w-1/2">
+          <div className="absolute inset-0 w-full h-full bg-cover bg-center bg-opacity-0 opacity-30 " style={{backgroundImage: `url(${devsecops})`, backgroundColor: 'white'}}>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-white opacity-0"></div>
+</div>
 
-            <p className="mt-4 text-lg md:text-xl">I'm a DevOps Engineer passionate about automation and continuous integration and continuous delivery.</p>
-            <button className="mt-8 bg-blue-900 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-700 hover:text-gray-200 transition duration-300">Contact Me</button>
+            
+            <h1 className="relative text-4xl md:text-6xl font-bold">Hi, I'm a DevOps Engineer</h1>
+
+            <p className=" relative mt-4 text-lg md:text-xl font-semibold">I'm a DevOps Engineer passionate about automation and continuous integration and continuous delivery.</p>
+            <button className="relative mt-8 bg-blue-900 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-700 hover:text-gray-200 transition duration-300">Contact Me</button>
               {/* Social Media Icons */}
-            <div className="mt-8 flex items-center">
+            <div className="relative mt-8 flex items-center">
               <a href="https://wa.me/9987274285" target="_blank" rel="noopener noreferrer" className="mr-4"
                 onMouseEnter={() => handleIconHover('whatsapp')} onMouseLeave={handleIconLeave}>
                 <FaWhatsapp size={32} style={iconStyles('whatsapp')} />
