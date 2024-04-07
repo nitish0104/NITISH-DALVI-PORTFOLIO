@@ -22,7 +22,7 @@ const ContactComponent = () => {
   };
 
   return (
-    <section class="bg-white  pb-6 h-screen ">
+    <section id="contact" className="bg-white  py-8 h-screen " >
     <div class="container px-6 py-4 mx-auto">
         <div className='mt-8'>
         <h1 className="text-2xl md:text-4xl font-bold text-center mb-8 relative">

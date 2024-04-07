@@ -60,6 +60,9 @@ const ProjectSlider = () => {
   };
 
   return (
+    <section id="projects">
+
+    
     <div className='bg-[#faffd6]'>
 
     <div className="container mx-auto px-4 py-8">
@@ -99,6 +102,7 @@ const ProjectSlider = () => {
         </div>
       
     </div>
+    </section>
   );
 };
 

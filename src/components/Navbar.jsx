@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Transition } from '@headlessui/react';
 import { Link } from 'react-router-dom';
 
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-900 text-white shadow-2xl ">
+    <nav className=" bg-blue-900 text-white shadow-2xl ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo on the left */}
@@ -17,11 +18,10 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-4 flex items-center md:ml-6">
               {/* Navigation links */}
-              <Link to="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">Home</Link>
-              <Link to="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">About</Link>
-              <Link to="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">Projects</Link>
-              <Link to="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">Skills</Link>
-              <Link to="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">Contact</Link>
+              <Link to="#about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">About</Link>
+              <Link to="#projects" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">Projects</Link>
+              <Link to="#skills" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">Skills</Link>
+              <Link to="#contact" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">Contact</Link>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
@@ -55,13 +55,12 @@ const Navbar = () => {
       >
         {(ref) => (
           <div className={`${isOpen ? 'fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center' : 'hidden'} md:hidden`} id="mobile-menu">
-            <div ref={ref} className="bg-[#5585b5] rounded-md p-4 w-full max-w-md">
+            <div ref={ref} className="bg-blue-900 rounded-md p-4 w-full max-w-md">
               {/* Mobile Navigation links */}
-              <Link to="#" className="text-gray-300 hover:text-white block px-4 py-2 rounded-md text-base font-medium mb-2  border-b-2   border-transparent hover:border-white">Home</Link>
-              <Link to="#" className="text-gray-300 hover:text-white block px-4 py-2 rounded-md text-base font-medium mb-2 border-b-2   border-transparent hover:border-white">About</Link>
-              <Link to="#" className="text-gray-300 hover:text-white block px-4 py-2 rounded-md text-base font-medium mb-2 border-b-2  border-transparent  hover:border-white">Projects</Link>
-              <Link to="#" className="text-gray-300 hover:text-white block px-4 py-2 rounded-md text-base font-medium mb-2 border-b-2  border-transparent  hover:border-white">Skills</Link>
-              <Link to="#" className="text-gray-300 hover:text-white block px-4 py-2 rounded-md text-base font-medium mb-2 border-b-2  border-transparent  hover:border-white">Contact</Link>
+              <Link to="about" className="text-gray-300 hover:text-white block px-4 py-2 rounded-md text-base font-medium mb-2 border-b-2   border-transparent hover:border-white">About</Link>
+              <Link to="projects" className="text-gray-300 hover:text-white block px-4 py-2 rounded-md text-base font-medium mb-2 border-b-2  border-transparent  hover:border-white">Projects</Link>
+              <Link to="skills" className="text-gray-300 hover:text-white block px-4 py-2 rounded-md text-base font-medium mb-2 border-b-2  border-transparent  hover:border-white">Skills</Link>
+              <Link to="contact" className="text-gray-300 hover:text-white block px-4 py-2 rounded-md text-base font-medium mb-2 border-b-2  border-transparent  hover:border-white">Contact</Link>
               {/* Close button */}
               <button onClick={() => setIsOpen(false)} className="absolute top-0 right-0 p-2 mr-2  mt-2 text-gray-600 hover:text-gray-800 focus:outline-none">
                 <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

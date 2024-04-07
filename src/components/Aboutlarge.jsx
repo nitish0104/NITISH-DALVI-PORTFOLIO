@@ -43,11 +43,11 @@ const HeroSectionLarge = () => {
                 onMouseEnter={() => handleIconHover('whatsapp')} onMouseLeave={handleIconLeave}>
                 <FaWhatsapp size={32} style={iconStyles('whatsapp')} />
               </a>
-              <a href="https://www.instagram.com/your-instagram-profile" target="_blank" rel="noopener noreferrer" className="mr-4"
+              <a href="https://www.instagram.com/nitish.dalvi/" target="_blank" rel="noopener noreferrer" className="mr-4"
                 onMouseEnter={() => handleIconHover('instagram')} onMouseLeave={handleIconLeave}>
                 <FaInstagram size={32} style={iconStyles('instagram')} />
               </a>
-              <a href="https://twitter.com/your-twitter-profile" target="_blank" rel="noopener noreferrer" className="mr-4"
+              <a href="https://twitter.com/NitishDalvi01" target="_blank" rel="noopener noreferrer" className="mr-4"
                 onMouseEnter={() => handleIconHover('twitter')} onMouseLeave={handleIconLeave}>
                 <FaTwitter size={32} style={iconStyles('twitter')} />
               </a>

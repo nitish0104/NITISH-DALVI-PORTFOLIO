@@ -44,7 +44,7 @@ const SmallDeviceSection = () => {
   return (
     <>
     
-    <section className="relative h-screen bg-gray-900 text-white z-10 " style={{ height: 'calc(100vh - 4rem)' }}>
+    <section className="relative h-screen bg-gray-900 text-white z-10 " id="about" style={{ height: 'calc(100vh - 4rem)' }}>
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full bg-cover bg-center bg-opacity-50" style={{backgroundImage: `url(${profileImage})`}}>
         {/* Overlay */}

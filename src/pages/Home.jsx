@@ -4,9 +4,10 @@ import About from '../components/About';
 import Aboutlarge from '../components/Aboutlarge'
 
 import Navbar from '../components/Navbar';
-import Skills from '../components/Skills';
+import Skills from './Skills';
 import MyProjects from '../components/Myprojects';
 import ContactComponent from '../components/contactcomponent';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <MyProjects></MyProjects>
       <Skills/>
       <ContactComponent />
+      <Footer/>
     </div>
   );
 };
