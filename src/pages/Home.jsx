@@ -15,7 +15,6 @@ const Home = () => {
 	  <Navbar></Navbar>
       <About />
       <Aboutlarge></Aboutlarge>
-      {/* <Projects /> */}
       <MyProjects></MyProjects>
       <Skills/>
       <ContactComponent />

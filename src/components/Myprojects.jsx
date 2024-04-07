@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Project1Image from '../images/oil-rig.png'; // Import the image for Project 1
+import Project2Image from '../images/Devops-img.webp'; // Import the image for Project 1
 
 const projects = [
   {
@@ -13,27 +14,26 @@ const projects = [
     id: 2,
     title: 'Project 2',
     description: 'Description for Project 2. This is a sample description for Project 2. It provides an overview of what the project is about.',
-    image: 'https://via.placeholder.com/300',
+    image: Project2Image,
     tools: ['Node.js', 'Express', 'MongoDB'],
   },
   {
     id: 3,
     title: 'Project 3',
     description: 'Description for Project 3. This is a sample description for Project 3. It provides an overview of what the project is about.',
-    image: 'https://via.placeholder.com/300',
+    image: Project1Image,
     tools: ['Vue.js', 'Bootstrap', 'MySQL'],
   },
   {
     id: 4,
     title: 'Project 4',
     description: 'Description for Project 4. This is a sample description for Project 4. It provides an overview of what the project is about.',
-    image: 'https://via.placeholder.com/300',
+    image: Project2Image,
     tools: ['Angular', 'Sass', 'Firebase'],
   },
 ];
 
 const ProjectSlider = () => {
-  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
   const [hoveredProjectIndex, setHoveredProjectIndex] = useState(null);
   const [isLaptop, setIsLaptop] = useState(window.innerWidth > 1024); // Assuming laptop width
 
@@ -49,17 +49,7 @@ const ProjectSlider = () => {
     };
   }, []);
 
-  const handlePrevClick = () => {
-    setCurrentProjectIndex((prevIndex) =>
-      prevIndex === 0 ? projects.length - 1 : prevIndex - 1
-    );
-  };
-
-  const handleNextClick = () => {
-    setCurrentProjectIndex((prevIndex) =>
-      prevIndex === projects.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+ 
 
   const handleHover = (index) => {
     setHoveredProjectIndex(index);
