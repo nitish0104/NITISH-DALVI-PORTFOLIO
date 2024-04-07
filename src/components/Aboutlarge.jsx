@@ -36,7 +36,7 @@ const HeroSectionLarge = () => {
             <h1 className="relative text-4xl md:text-6xl font-bold">Hi, I'm a DevOps Engineer</h1>
 
             <p className=" relative mt-4 text-lg md:text-xl font-semibold">I'm a DevOps Engineer passionate about automation and continuous integration and continuous delivery.</p>
-            <button className="relative mt-8 bg-blue-900 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-700 hover:text-gray-200 transition duration-300">Contact Me</button>
+            <button className="relative mt-8 bg-[#291C3A] text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-900 hover:text-gray-200 transition duration-300">Contact Me</button>
               {/* Social Media Icons */}
             <div className="relative mt-8 flex items-center">
               <a href="https://wa.me/9987274285" target="_blank" rel="noopener noreferrer" className="mr-4"
