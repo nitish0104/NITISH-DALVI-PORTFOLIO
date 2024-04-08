@@ -70,7 +70,7 @@ const HeroSectionLarge = () => {
 
   return (
     <>
-      <section id='about' data-aos="zoom-in" className="relative bg-white text-gray-900 py-32 hidden lg:block md:mt-8" style={{ height: 'calc(100vh - 4rem)' }}>
+      <section id='about' data-aos="zoom-in" className="relative bg-white text-gray-900 py-32 hidden lg:block md:mt-14" style={{ height: 'calc(100vh - 4rem)' }}>
         {/* Random bubbles */}
      
         {bubbles.map((bubble, index) => (
