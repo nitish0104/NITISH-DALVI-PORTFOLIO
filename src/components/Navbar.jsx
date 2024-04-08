@@ -1,9 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import { FaGithub } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const smoothScrollTo = (id) => {
     const element = document.getElementById(id);
@@ -13,7 +30,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#291C3A] text-white shadow-2xl">
+    <nav
+      id="navbar"
+      className={`bg-[#291C3A] text-white shadow-2xl fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolling ? 'bg-opacity-75' : ''}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Name on the left */}
         <div id='name'>

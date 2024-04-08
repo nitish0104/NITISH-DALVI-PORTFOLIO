@@ -22,7 +22,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id='skills' className='bg-[#291C3A] md:py-8 sm:py-4 h-screen '>
+    <section data-aos="fade-left" id='skills' className='bg-[#291C3A] md:py-8 sm:py-4 h-screen '>
 
     
     <div className="  text-white container md:px-32  px-6 py-4 mx-auto">
