@@ -70,8 +70,8 @@ const ProjectSlider = () => {
   };
 
   return (
-    <section id="projects" className='md:h-screen bg-[#e9e1f2]'>
-      <div className='bg-[#e9e1f2]'>
+    <section id="projects" className='md:h-screen bg-[#E1EBED]'>
+      <div className='bg-[#E1EBED]'>
         <div className="container mx-auto px-4 py-8">
           <h1 className="text-2xl md:text-4xl font-bold text-center mb-8 relative">
             <span className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black h-0.5 w-12"></span>

@@ -18,16 +18,16 @@ const Navbar = () => {
         {/* Name on the left */}
         <div id='name'>
           <h1 className="text-xl font-semibold">Nitish Dalvi</h1>
-          <p className="text-sm">DevOps Engineer</p>
+          <p className="text-sm text-yellow-300">DevOps Engineer</p>
         </div>
         {/* Navigation links in the center */}
         <div id='nav' className="hidden md:block">
           <div className=" flex items-center pr-9">
             {/* Navigation links */}
-            <button onClick={() => smoothScrollTo('about')} className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">About</button>
-            <button onClick={() => smoothScrollTo('projects')} className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">Projects</button>
-            <button onClick={() => smoothScrollTo('skills')} className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">Skills</button>
-            <button onClick={() => smoothScrollTo('contact')} className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-white">Contact</button>
+            <button onClick={() => smoothScrollTo('about')} className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-yellow-400">About</button>
+            <button onClick={() => smoothScrollTo('projects')} className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-yellow-400">Projects</button>
+            <button onClick={() => smoothScrollTo('skills')} className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-yellow-400">Skills</button>
+            <button onClick={() => smoothScrollTo('contact')} className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out border-b-2 border-transparent hover:border-yellow-400">Contact</button>
           </div>
         </div>
         {/* GitHub link on the right */}
