@@ -5,69 +5,57 @@ import { SiDocker, SiKubernetes, SiReact, SiMongodb, SiLinux, SiTerraform, SiJen
 import { FaAws } from "react-icons/fa6";
 
 const Skills = () => {
+  // Define skills with their respective proficiency scales
+  const skills = [
+    { name: "Docker", icon: <SiDocker size={48} />, scale: 50 },
+    { name: "Kubernetes", icon: <SiKubernetes size={48} />, scale: 60 },
+    { name: "ReactJs", icon: <SiReact size={48} />, scale: 90 },
+    { name: "MongoDB", icon: <SiMongodb size={48} />, scale: 40 },
+    { name: "AWS", icon: <FaAws size={48} />, scale: 70 },
+    { name: "Linux", icon: <SiLinux size={48} />, scale: 85 },
+    { name: "Terraform", icon: <SiTerraform size={48} />, scale: 65 },
+    { name: "Jenkins", icon: <SiJenkins size={48} />, scale: 60 },
+    { name: "GitHub", icon: <SiGithub size={48} />, scale: 85 },
+    { name: "Prometheus", icon: <SiPrometheus size={48} />, scale: 30 },
+    { name: "Grafana", icon: <SiGrafana size={48} />, scale: 35 },
+    { name: "SonarQube", icon: <SiSonarqube size={48} />, scale: 40 }
+  ];
+
   return (
-    <div className="py-8 bg-slate-200">
+    <div className="p-3 md:p-8 bg-[#291C3A] h-screen text-white">
       <h2 className="text-3xl font-bold mb-4 text-center">Skills</h2>
-      <div className="grid grid-cols-3 gap-6 md:grid-cols-4 lg:grid-cols-6">
-        {/* Docker */}
-        <div className="text-center">
-          <SiDocker className="w-12 h-12 mx-auto mb-2 text-[#291C3A]" />
-          <p className="font-semibold">Docker</p>
+      <div className="flex justify-around h-full mt-8">
+        {/* First vertical plane */}
+        <div className="text-center w-1/2 h-full pr-2">
+          {skills.slice(0, Math.ceil(skills.length / 2)).map((skill, index) => (
+            <div key={index} className="mb-8 flex items-center justify-center">
+              <div className="w-4/4 mr-2 md:mr-4 ">
+                {skill.icon}
+              </div>
+              <div className="w-3/4">
+                <p className="font-semibold">{skill.name}</p>
+                <div className="h-2 bg-[#291C3A] mt-2">
+                  <div className="h-full bg-yellow-500" style={{ width: `${skill.scale}%` }} />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-        {/* Kubernetes */}
-        <div className="text-center">
-          <SiKubernetes className="w-12 h-12 mx-auto mb-2 text-[#291C3A]" />
-          <p className="font-semibold">Kubernetes</p>
-        </div>
-        {/* React */}
-        <div className="text-center">
-          <SiReact className="w-12 h-12 mx-auto mb-2 text-[#291C3A]" />
-          <p className="font-semibold">React</p>
-        </div>
-        {/* MongoDB */}
-        <div className="text-center">
-          <SiMongodb className="w-12 h-12 mx-auto mb-2 text-[#291C3A]" />
-          <p className="font-semibold">MongoDB</p>
-        </div>
-        {/* AWS */}
-        <div className="text-center">
-          <FaAws className="w-12 h-12 mx-auto mb-2 text-[#291C3A]" />
-          <p className="font-semibold">AWS</p>
-        </div>
-        {/* Linux */}
-        <div className="text-center">
-          <SiLinux className="w-12 h-12 mx-auto mb-2 text-[#291C3A]" />
-          <p className="font-semibold">Linux</p>
-        </div>
-        {/* Terraform */}
-        <div className="text-center">
-          <SiTerraform className="w-12 h-12 mx-auto mb-2 text-[#291C3A]" />
-          <p className="font-semibold">Terraform</p>
-        </div>
-        {/* Jenkins */}
-        <div className="text-center">
-          <SiJenkins className="w-12 h-12 mx-auto mb-2 text-[#291C3A]" />
-          <p className="font-semibold">Jenkins</p>
-        </div>
-        {/* GitHub */}
-        <div className="text-center">
-          <SiGithub className="w-12 h-12 mx-auto mb-2 text-[#291C3A]" />
-          <p className="font-semibold">GitHub</p>
-        </div>
-        {/* Prometheus */}
-        <div className="text-center">
-          <SiPrometheus className="w-12 h-12 mx-auto mb-2 text-[#291C3A]" />
-          <p className="font-semibold">Prometheus</p>
-        </div>
-        {/* Grafana */}
-        <div className="text-center">
-          <SiGrafana className="w-12 h-12 mx-auto mb-2 text-[#291C3A]" />
-          <p className="font-semibold">Grafana</p>
-        </div>
-        {/* ArgoCD */}
-        <div className="text-center">
-          <SiSonarqube  className="w-12 h-12 mx-auto mb-2 text-[#291C3A]" />
-          <p className="font-semibold">SonarQube</p>
+        {/* Second vertical plane */}
+        <div className="text-center w-1/2 h-full">
+          {skills.slice(Math.ceil(skills.length / 2)).map((skill, index) => (
+            <div key={index} className="mb-8 flex items-center justify-center">
+              <div className="w-4/4 mr-2 md:mr-4">
+                {skill.icon}
+              </div>
+              <div className="w-3/4">
+                <p className="font-semibold">{skill.name}</p>
+                <div className="h-2 bg-[#291C3A] mt-2">
+                  <div className="h-full bg-yellow-500" style={{ width: `${skill.scale}%` }} />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

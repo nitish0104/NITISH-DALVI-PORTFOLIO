@@ -23,7 +23,7 @@ const ContactComponent = () => {
 
   return (
     <section id="contact" className="bg-indigo-200  md:py-8 sm:py-4 h-screen " >
-    <div class="container md:px-32  px-6 py-4 mx-auto">
+    <div class="container md:px-32  px-6 py-4 mx-auto bg-indigo-200">
         <div className='mt-8'>
         <h1 className="text-2xl md:text-4xl font-bold text-center mb-8 relative text-black">
         <span className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black h-0.5 w-6"></span>
