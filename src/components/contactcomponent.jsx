@@ -15,12 +15,33 @@ const ContactComponent = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You can handle form submission here, for simplicity, let's just log the data
-    console.log(formData);
-    // You can also send this data to a server or an API
+  
+    try {
+      const response = await fetch('http://localhost:5000/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to send email.');
+      }
+  
+      console.log('Email sent successfully!');
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error occurred:', error.message);
+    }
   };
+  
 
   return (
     <section id="contact" className="bg-[#E1EBED]  md:py-8 sm:py-4 h-screen " >
