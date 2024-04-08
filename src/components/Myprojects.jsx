@@ -65,7 +65,7 @@ const ProjectSlider = () => {
   };
 
   return (
-    <section id="projects">
+    <section id="projects" className='md:h-screen bg-[#e9e1f2] '>
 
     
     <div className='bg-[#e9e1f2] '>

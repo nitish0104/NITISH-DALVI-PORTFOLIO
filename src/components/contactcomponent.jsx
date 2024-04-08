@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 
 // Card component for displaying contact information
@@ -22,13 +23,13 @@ const ContactComponent = () => {
   };
 
   return (
-    <section id="contact" className="bg-indigo-200  md:py-8 sm:py-4 h-screen " >
-    <div class="container md:px-32  px-6 py-4 mx-auto bg-indigo-200">
+    <section id="contact" className="bg-[#E1EBED]  md:py-8 sm:py-4 h-screen " >
+    <div class="container md:px-32  px-6 py-4 mx-auto bg-[#E1EBED]">
         <div className='mt-8'>
         <h1 className="text-2xl md:text-4xl font-bold text-center mb-8 relative text-black">
-        <span className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black h-0.5 w-6"></span>
+        <span className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black h-0.5 w-12"></span>
        Contact Me
-        <span className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black h-0.5 w-6"></span>
+        <span className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black h-0.5 w-12"></span>
       </h1>
         </div>
 
@@ -42,9 +43,23 @@ const ContactComponent = () => {
                     </span>
 
                     <h2 class="mt-4 text-base font-medium text-gray-800 ">Email</h2>
-                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Our friendly team is here to help.</p>
-                    <p class="mt-2 text-sm text-black dark:text-blue-400">hello@merakiui.com</p>
+                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">i'll connect you within 24hrs</p>
+                    <p class="mt-2 text-sm text-black dark:text-blue-400">nitish1dalvi@gmail.com</p>
                 </div>
+
+                <div>
+    <span class="inline-block p-3 text-white rounded-full bg-[#291C3A] ">
+    <FaWhatsapp className="text-2xl" />
+    </span>
+    
+    <h2 class="mt-4 text-base font-medium text-gray-800 ">Whatsapp chat</h2>
+    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Our friendly team is here to help.</p>
+    <a href="https://wa.me/9987274285" target="_blank" rel="noopener noreferrer" className='mt-2 text-sm text-black dark:text-blue-400'>
+    Start new chat
+        </a>
+    
+</div>
+
 
                 <div>
                     <span class="inline-block p-3 text-white rounded-full bg-[#291C3A] ">
@@ -54,22 +69,9 @@ const ContactComponent = () => {
                         </svg>
                     </span>
                     
-                    <h2 class="mt-4 text-base font-medium text-gray-800 ">Live chat</h2>
-                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Our friendly team is here to help.</p>
-                    <p class="mt-2 text-sm text-black dark:text-blue-400">Start new chat</p>
-                </div>
-
-                <div>
-                    <span class="inline-block p-3 text-white rounded-full bg-[#291C3A] ">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                        </svg>
-                    </span>
-                    
-                    <h2 class="mt-4 text-base font-medium text-gray-800 ">Office</h2>
+                    <h2 class="mt-4 text-base font-medium text-gray-800 ">Home</h2>
                     <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Come say hello at our office HQ.</p>
-                    <p class="mt-2 text-sm text-black dark:text-blue-400">100 Smith Street Collingwood VIC 3066 AU</p>
+                    <p class="mt-2 text-sm text-black dark:text-blue-400">Thane,maharashtra,India</p>
                 </div>
 
                 <div>
@@ -81,11 +83,11 @@ const ContactComponent = () => {
                     
                     <h2 class="mt-4 text-base font-medium text-gray-800 ">Phone</h2>
                     <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Mon-Fri from 8am to 5pm.</p>
-                    <p class="mt-2 text-sm text-black dark:text-blue-400">+1 (555) 000-0000</p>
+                    <p class="mt-2 text-sm text-black dark:text-blue-400">+91 9987274285</p>
                 </div>
             </div>
 
-            <div class=" rounded-lg bg-indigo-200 text-black ">
+            <div class=" rounded-lg bg-[#E1EBED] text-black ">
                <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label htmlFor="name" className="block mb-1 font-semibold">Name</label>

@@ -22,8 +22,17 @@ const Skills = () => {
   ];
 
   return (
-    <div className="p-3 md:p-8 bg-[#291C3A] h-screen text-white">
-      <h2 className="text-3xl font-bold mb-4 text-center">Skills</h2>
+    <section id='skills' className='bg-[#291C3A] md:py-8 sm:py-4 h-screen '>
+
+    
+    <div className="  text-white container md:px-32  px-6 py-4 mx-auto">
+      <div className='py-4'>
+        <h1 className="text-2xl md:text-4xl font-bold text-center mb-8 relative text-white">
+        <span className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white h-0.5 w-12"></span>
+       Skill's
+        <span className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white h-0.5 w-12"></span>
+      </h1>
+        </div>
       <div className="flex justify-around h-full mt-8">
         {/* First vertical plane */}
         <div className="text-center w-1/2 h-full pr-2">
@@ -59,6 +68,7 @@ const Skills = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 
