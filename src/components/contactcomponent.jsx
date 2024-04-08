@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Spinner from './Spinner';
 
 
 // Card component for displaying contact information
 
 const ContactComponent = () => {
+
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
+  const [loading, setLoading] = useState(false); // State to track loading state
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,21 +23,22 @@ const ContactComponent = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+    setLoading(true); // Set loading to true when submitting
+
     try {
-      const response = await fetch('http://localhost:5000/send-email', {
+      const response = await fetch('https://contact-backend-one.vercel.app/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
       });
-  
+
       if (!response.ok) {
         throw new Error('Failed to send email.');
       }
-  
-      console.log('Email sent successfully!');
+
+      toast.success('Email sent successfully!');
       setFormData({
         name: '',
         email: '',
@@ -39,8 +46,12 @@ const ContactComponent = () => {
       });
     } catch (error) {
       console.error('Error occurred:', error.message);
+      toast.error('Failed to send email.');
+    } finally {
+      setLoading(false); // Set loading back to false after email is sent
     }
   };
+
   
 
   return (
@@ -146,13 +157,15 @@ const ContactComponent = () => {
                 required
               ></textarea>
             </div>
-            <button type="submit" className="hover:bg-[#3c2954] w-full font-semibold  text-white px-4 py-2 rounded-md bg-[#291C3A] transition-colors">
-              Submit
+            <button type="submit" className="hover:bg-[#3c2954] w-full font-semibold text-white px-4 py-2 rounded-md bg-[#291C3A] transition-colors">
+            {!loading ? "Submit" : <Spinner/>}
             </button>
           </form>
             </div>
         </div>
     </div>
+    <ToastContainer />
+
 </section>
   );
 };
