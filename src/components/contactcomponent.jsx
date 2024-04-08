@@ -53,7 +53,7 @@ const ContactComponent = () => {
     </span>
     
     <h2 class="mt-4 text-base font-medium text-gray-800 ">Whatsapp chat</h2>
-    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Our friendly team is here to help.</p>
+    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Mostly replied time between 1-2hr.</p>
     <a href="https://wa.me/9987274285" target="_blank" rel="noopener noreferrer" className='mt-2 text-sm text-black dark:text-blue-400'>
     Start new chat
         </a>
@@ -70,7 +70,7 @@ const ContactComponent = () => {
                     </span>
                     
                     <h2 class="mt-4 text-base font-medium text-gray-800 ">Home</h2>
-                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Come say hello at our office HQ.</p>
+                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Come say hello at my place.</p>
                     <p class="mt-2 text-sm text-black dark:text-blue-400">Thane,maharashtra,India</p>
                 </div>
 
