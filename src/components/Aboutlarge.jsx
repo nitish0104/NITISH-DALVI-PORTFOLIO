@@ -4,39 +4,38 @@ import devsecops from '../images/Devsecops-white.jpg';
 import { FaWhatsapp, FaInstagram, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
 const HeroSectionLarge = () => {
   const [hoveredIcon, setHoveredIcon] = useState(null);
   const [bubbles, setBubbles] = useState([]);
+
   useEffect(() => {
     AOS.init({
-      // Global settings:
-      disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-      startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-      initClassName: 'aos-init', // class applied after initialization
-      animatedClassName: 'aos-animate', // class applied on animation
-      useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-      disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-      debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-      throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-
-      // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-      offset: 120, // offset (in px) from the original trigger point
-      delay: 0, // values from 0 to 3000, with step 50ms
-      duration: 400, // values from 0 to 3000, with step 50ms
-      easing: 'ease', // default easing for AOS animations
-      once: false, // whether animation should happen only once - while scrolling down
-      mirror: false, // whether elements should animate out while scrolling past them
-      anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
-
+      disable: false,
+      startEvent: 'DOMContentLoaded',
+      initClassName: 'aos-init',
+      animatedClassName: 'aos-animate',
+      useClassNames: false,
+      disableMutationObserver: false,
+      debounceDelay: 50,
+      throttleDelay: 99,
+      offset: 120,
+      delay: 0,
+      duration: 400,
+      easing: 'ease',
+      once: false,
+      mirror: false,
+      anchorPlacement: 'top-bottom',
     });
   }, []);
+
   useEffect(() => {
     const generateRandomBubbles = () => {
       const newBubbles = [];
-      const bubbleColors = ['#291C3A', '#452E55', '#604471', '#7C588D']; // Add more shades as needed
+      const bubbleColors = ['#291C3A', '#452E55', '#604471', '#7C588D'];
 
-      for (let i = 0; i < 10; i++) { // Adjust number of bubbles as needed
-        const size = Math.floor(Math.random() * 40) + 20; // Random size between 20 and 60
+      for (let i = 0; i < 10; i++) {
+        const size = Math.floor(Math.random() * 40) + 20;
         const left = Math.floor(Math.random() * window.innerWidth);
         const top = Math.floor(Math.random() * window.innerHeight);
         const color = bubbleColors[Math.floor(Math.random() * bubbleColors.length)];
@@ -49,7 +48,6 @@ const HeroSectionLarge = () => {
 
     generateRandomBubbles();
 
-    // Re-generate bubbles when the window is resized
     window.addEventListener('resize', generateRandomBubbles);
 
     return () => window.removeEventListener('resize', generateRandomBubbles);
@@ -70,7 +68,7 @@ const HeroSectionLarge = () => {
 
   return (
     <>
-      <section id='about' data-aos="zoom-in" className="relative bg-white text-gray-900 py-32 hidden lg:block md:mt-14" style={{ height: 'calc(100vh - 4rem)' }}>
+      <section id='about' data-aos="zoom-in" className="relative container bg-white text-gray-900 py-32 hidden lg:block md:mt-14" style={{ height: 'calc(100vh - 4rem)' }}>
         {/* Random bubbles */}
      
         {bubbles.map((bubble, index) => (

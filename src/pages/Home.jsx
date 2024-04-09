@@ -11,13 +11,13 @@ import Footer from '../components/Footer';
 
 const Home = () => {
   return (
-    <div>
+    <div className='overflow-x-hidden'>
      
 
 	  <Navbar></Navbar>
       <About />
-      <Aboutlarge></Aboutlarge>
-      <MyProjects></MyProjects>
+      <Aboutlarge/>
+      <MyProjects/>
       <Skills/>
       <ContactComponent />
       <Footer/>
