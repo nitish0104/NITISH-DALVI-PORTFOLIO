@@ -30,6 +30,16 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
+      - name: Check if S3 bucket exists
+        id: check-bucket
+        run: |
+          aws s3api head-bucket --bucket nitish-dalvi || echo "::set-output name=exists::false"
+
+      - name: Create S3 bucket if it doesn't exist
+        if: steps.check-bucket.outputs.exists == 'false'
+        run: |
+          aws s3api create-bucket --bucket nitish-dalvi --region us-east-1
+
       - name: Deploy to S3
         run: |
           aws s3 sync ./build s3://nitish-dalvi --delete
