@@ -18,7 +18,7 @@ const SmallDeviceSection = () => {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [statements.length]);
  
 
   const [isSmallDevice, setIsSmallDevice] = useState(false);
