@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Project1Image from '../images/oil-rig.png'; // Import the image for Project 1
-import Project2Image from '../images/Devsecops-landingpage.png'; // Import the image for Project 1
-import Project3Image from '../images/Todo-GitOps.png'; // Import the image for Project 1
-import Project4Image from '../images/Devsecops-white.jpg'; // Import the image for Project 1
+import Project1Image from '../images/oil-rig.png'; 
+import Project2Image from '../images/Devsecops-landingpage.png'; 
+import Project3Image from '../images/Todo-GitOps.png';  
+import Project4Image from '../images/portfolio-website.png'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaGithub } from 'react-icons/fa';
@@ -35,11 +35,12 @@ const projects = [
   },
   {
     id: 4,
-    title: 'Project 4',
-    description: 'Description for Project 4. This is a sample description for Project 4. It provides an overview of what the project is about.',
+    title: 'My-Portfolio-Website',
+    description: 'This is my personal portfolio website created using React and Tailwind . The simple backend is created using Express (nodemailer). The website is deployed on aws s3 using CI/CD github Action.',
     image: Project4Image,
-    tools: ['Angular', 'Sass', 'Firebase'],
-    githubLink:  'https://github.com/jacob'
+    tools: ['AWS S3', 'ReactJs', 'Tailwind', 'Express' ,'Github Action', 'Docker'],
+    web:"http://nitish-dalvi.s3-website-us-east-1.amazonaws.com/",
+    githubLink:  'https://github.com/nitish0104/NITISH-DALVI-PORTFOLIO/'
   },
 ];
 
