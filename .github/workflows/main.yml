@@ -46,3 +46,14 @@ jobs:
           aws s3 cp ./build/index.html s3://nitish-dalvi/index.html --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type text/html
           aws s3 cp ./build/static/css/ s3://nitish-dalvi/static/css/ --recursive --metadata-directive REPLACE --cache-control max-age=31536000,public --content-type text/css
           aws s3 cp ./build/static/js/ s3://nitish-dalvi/static/js/ --recursive --metadata-directive REPLACE --cache-control max-age=31536000,public --content-type application/javascript
+
+      - name: Docker Login
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and Push Docker Image
+        run: |
+          docker build -t nitish0104/nitish-dalvi-portfolio:v2 .
+          docker push nitish0104/nitish-dalvi-portfolio:v2
