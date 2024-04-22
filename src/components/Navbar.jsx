@@ -38,7 +38,7 @@ const Navbar = () => {
         {/* Name on the left */}
         <div id='name'>
           <h1 className="text-xl font-semibold">Nitish Dalvi</h1>
-          <p className="text-sm text-yellow-400">DevOps Engineer</p>
+          <p className="text-sm text-yellow-400">Software Developer</p>
         </div>
         {/* Navigation links in the center */}
         <div id='nav' className="hidden md:block">

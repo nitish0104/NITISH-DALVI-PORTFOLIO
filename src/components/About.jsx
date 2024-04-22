@@ -5,20 +5,35 @@ import profileImage from '../images/my-image.jpg';
 
 const SmallDeviceSection = () => {
   const [statementIndex, setStatementIndex] = useState(0);
+  const [displayedStatement, setDisplayedStatement] = useState('');
+
   const statements = [
     " DevOps Engineer",
     " Software Engineer",
     " MERN-Stack Developer",
-    " Front-end Developer"
+    " Front-end Developer",
+    "Full-Stack Developer"
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setStatementIndex((prevIndex) => (prevIndex + 1) % statements.length);
-    }, 2000);
+      let currentIndex = 0;
+      let interval = setInterval(() => {
+        if (currentIndex <= statements[statementIndex].length) {
+          setDisplayedStatement(statements[statementIndex].slice(0, currentIndex));
+          currentIndex++;
+        } else {
+          clearInterval(interval);
+          setTimeout(() => {
+            setStatementIndex((prevIndex) => (prevIndex + 1) % statements.length);
+          }, 700); // Delay before next statement starts
+        }
+      }, 200); // Interval between letter reveal
+      return () => clearInterval(interval);
+    }, 1000); // Interval before next statement starts
 
     return () => clearInterval(interval);
-  }, [statements.length]);
+  }, [statementIndex, statements]);
  
 
   const [isSmallDevice, setIsSmallDevice] = useState(false);
@@ -54,8 +69,11 @@ const SmallDeviceSection = () => {
       {/* Content */}
       <div className="relative flex flex-col justify-center items-center h-full">
         <div className="max-w-4xl px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4"> Hi, I'm a{statements[statementIndex]}</h1>
-          <p className="text-lg sm:text-xl md:text-2xl mb-8">I'm a DevOps Engineer passionate about automation and continuous integration and continuous delivery.</p>
+          <div className='h-[18vh] '>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4"> Hi, I'm a {displayedStatement}</h1>
+
+          </div>
+          <p className="text-lg sm:text-xl md:text-2xl mb-8">I'm a Software Developer passionate about web development ,automation , continuous integration and continuous delivery.</p>
         </div>
       </div>
     </section>

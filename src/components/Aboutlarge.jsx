@@ -8,6 +8,38 @@ import 'aos/dist/aos.css';
 const HeroSectionLarge = () => {
   const [hoveredIcon, setHoveredIcon] = useState(null);
   const [bubbles, setBubbles] = useState([]);
+  const [statementIndex, setStatementIndex] = useState(0);
+  const [displayedStatement, setDisplayedStatement] = useState('');
+
+  const statements = [
+    " DevOps Engineer",
+    " MERN-Stack Developer",
+    " Software Engineer",
+    " Front-End Developer",
+    "Full-Stack Developer"
+  ];
+
+  
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      let currentIndex = 0;
+      let interval = setInterval(() => {
+        if (currentIndex <= statements[statementIndex].length) {
+          setDisplayedStatement(statements[statementIndex].slice(0, currentIndex));
+          currentIndex++;
+        } else {
+          clearInterval(interval);
+          setTimeout(() => {
+            setStatementIndex((prevIndex) => (prevIndex + 1) % statements.length);
+          }, 700); // Delay before next statement starts
+        }
+      }, 200); // Interval between letter reveal
+      return () => clearInterval(interval);
+    }, 1000); // Interval before next statement starts
+
+    return () => clearInterval(interval);
+  }, [statementIndex, statements]);
 
   useEffect(() => {
     AOS.init({
@@ -85,10 +117,12 @@ const HeroSectionLarge = () => {
               {/* Overlay */}
               <div className="absolute inset-0 bg-white opacity-0"></div>
             </div>
+<div className='h-[18vh]'>
 
-            <h1 className="relative text-4xl md:text-6xl font-bold">Hi, I'm a DevOps Engineer</h1>
+            <h1 className="relative text-4xl md:text-6xl font-bold">Hi, I'm a {displayedStatement}</h1>
 
-            <p className="relative mt-4 text-lg md:text-xl font-semibold">I'm a DevOps Engineer passionate about automation and continuous integration and continuous delivery.</p>
+</div>
+            <p className="relative mt-4 text-lg md:text-xl font-semibold">I'm a Software Developer passionate about web development ,automation , continuous integration and continuous delivery.</p>
             <a href="#contact">
             <button className="relative mt-8 bg-[#291C3A] text-white px-6 py-3 rounded-full shadow-md hover:bg-purple-950 hover:text-gray-200 transition duration-300">Contact Me</button>
             </a>
