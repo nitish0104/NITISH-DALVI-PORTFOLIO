@@ -10,7 +10,7 @@ const HeroSectionLarge = () => {
   const [bubbles, setBubbles] = useState([]);
   const [statementIndex, setStatementIndex] = useState(0);
   const [displayedStatement, setDisplayedStatement] = useState('');
-
+// eslint-disable-next-line
   const statements = [
     " DevOps Engineer",
     " MERN-Stack Developer",
