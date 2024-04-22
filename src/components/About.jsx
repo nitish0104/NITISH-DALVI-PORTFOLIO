@@ -6,7 +6,7 @@ import profileImage from '../images/my-image.jpg';
 const SmallDeviceSection = () => {
   const [statementIndex, setStatementIndex] = useState(0);
   const [displayedStatement, setDisplayedStatement] = useState('');
-
+// eslint-disable-next-line
   const statements = [
     " DevOps Engineer",
     " Software Engineer",
