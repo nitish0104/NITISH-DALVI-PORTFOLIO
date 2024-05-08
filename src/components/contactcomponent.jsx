@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast, ToastContainer ,Bounce} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Spinner from './Spinner';
 
@@ -38,7 +38,17 @@ const ContactComponent = () => {
         throw new Error('Failed to send email.');
       }
 
-      toast.success('Email sent successfully!');
+      toast.success('Email sent successfully!', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });;
       setFormData({
         name: '',
         email: '',
