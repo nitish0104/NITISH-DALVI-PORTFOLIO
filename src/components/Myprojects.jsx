@@ -22,7 +22,7 @@ const projects = [
     title: 'Landingpage-DevSecOps',
     description: 'Deployed a Simple Landingpage created in Python The .CI/CD for this project is done using jenkins.The code quality check and docker image scan is done by sonarqube and trivy. For deployment kubernetes is used (EKS) .Monitoring and visualization is done using prometheus and grafana.',
     image: Project2Image,
-    tools: ['Docker', 'Kubernetes', 'Jenkins','Sonarqube','Trivy','AWS VPC,Ec2'],
+    tools: ['Docker', 'K8s', 'Jenkins','Sonarqube','Prometheus','Grafana','AWS VPC,Ec2'],
     githubLink:  'https://github.com/nitish0104/DevSecOps-Python-Landingpage'
   },
   {
